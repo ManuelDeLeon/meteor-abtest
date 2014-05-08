@@ -1,8 +1,8 @@
 Meteor.startup ->
-  Template.abtestDashboard.created = ->
+  Template.abtests.created = ->
     Meteor.subscribe "ABTests"
 
-  Template.abtestDashboard.helpers
+  Template.abtests.helpers
     tests: -> ABTests.find()
     decFormat: (num) -> num.toFixed(2)
     intFormat: (num) -> num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")

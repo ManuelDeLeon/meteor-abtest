@@ -32,7 +32,7 @@ Displaying the info
 ***On the Client***
 
 ```
-{{> abtestDashboard }}
+{{> abtests }}
 ```
 
 ***On the Server***
