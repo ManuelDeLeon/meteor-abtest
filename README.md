@@ -1,9 +1,7 @@
 meteor-abtest
 =============
 
-Simple AB testing framework for Meteor.
-
-It's modeled after Rails' split.
+Simple AB testing framework for Meteor (modeled after Rails' split).
 
 It uses localStorage to keep track of the users. If localStorage is not available it uses cookies and if that fails it uses a session variable.
 
@@ -23,7 +21,7 @@ Concludes the test for this user.
 **Example**
 ```
 Template.landing.helpers
-  showRoundButton: -> ABTest.start('Landing Button', ['Normal (boxed)', 'New (round)']) is 'New (round)'
+  showRoundButton: -> ABTest.start('Landing Button', ['Normal', 'Round']) is 'Round'
 ```
 ```
 Template.landing.events
