@@ -3,8 +3,6 @@ meteor-abtest
 
 Simple AB testing framework for Meteor (modeled after Rails' split).
 
-It uses localStorage to keep track of the users. If localStorage is not available it uses cookies and if that fails it uses a session variable.
-
 Usage
 -----
 
@@ -48,9 +46,13 @@ ABTestServer.adminIds = ['user 1 id', 'user 2 id', 'user n id']
 
 ![meteor-abtest](https://cloud.githubusercontent.com/assets/4257750/2920902/9cfde158-d6ec-11e3-9ec1-a424378970b3.png)
 
+Tracking Users
+--------------
+This library uses localStorage to keep track of the users. If localStorage is not available it uses cookies and if that fails it uses a session variable.
+
 ABTests collection
 ------------------
-If the user is listed as an admin in ABTestServer.adminIds you can use the query the ABTests collection.
+You'll probably never need to do this but if you want you can query the ABTests collection.
 
 ***ABTests.find() Example***
 
