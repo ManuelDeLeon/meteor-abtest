@@ -1,0 +1,1 @@
+@ABTests = new Meteor.Collection("abtests")
