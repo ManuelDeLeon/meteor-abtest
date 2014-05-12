@@ -42,9 +42,10 @@ class ABTest
   @start = (name, values) ->
     value = getValue storageName(name)
     if not value
-      value = values[randomNumber(0, values.length - 1)]
+      randomIndex = randomNumber(0, values.length - 1)
+      value = values[randomIndex]
       setValue storageName(name), value
-      Meteor.call 'startAbTest', name, value
+      Meteor.call 'startAbTest', name, value, randomIndex
     value
 
   @finish = (name) ->
