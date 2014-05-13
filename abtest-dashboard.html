@@ -1,43 +1,47 @@
 <template name="abtests">
   {{#each tests}}
-    <h3 class="pull-left">{{name}}</h3>
-    <button id="resetTest" class="btn btn-danger pull-right">Reset Test</button>
-    <table class="table table-condensed table-hover">
-      <thead>
-        <tr>
-          <th>Alternatives</th>
-          <th>Started</th>
-          <th>Non-Finished</th>
-          <th>Finished</th>
-          <th>Finished Rate</th>
-          <th>vs Control</th>
-          <th>Significant</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each alternatives}}
+    <div class="row">
+      <h3 class="pull-left">{{name}}</h3>
+      <button id="resetTest" class="btn btn-danger pull-right">Reset Test</button>
+    </div>
+    <div class="row">
+      <table class="table table-condensed table-hover">
+        <thead>
           <tr>
-            <td>{{name}}</td>
-            <td>{{intFormat started}}</td>
-            <td>{{intFormat nonfinished}}</td>
-            <td>{{intFormat finished}}</td>
-            <td>{{decFormat finishedRate}}%</td>
-            <td><span class={{vsControlClass}}>{{decFormat vsControl}}%</span></td>
-            <td><span class={{significantClass}}>{{significant}}</span></td>
+            <th>Alternatives</th>
+            <th>Started</th>
+            <th>Non-Finished</th>
+            <th>Finished</th>
+            <th>Finished Rate</th>
+            <th>vs Control</th>
+            <th>Significant</th>
           </tr>
-        {{/each}}
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>Totals</td>
-          <td>{{intFormat totals.started}}</td>
-          <td>{{intFormat totals.nonfinished}}</td>
-          <td>{{intFormat totals.finished}}</td>
-          <td>{{decFormat totals.finishedRate}}%</td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tfoot>
-    </table>
+        </thead>
+        <tbody>
+          {{#each alternatives}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{intFormat started}}</td>
+              <td>{{intFormat nonfinished}}</td>
+              <td>{{intFormat finished}}</td>
+              <td>{{decFormat finishedRate}}%</td>
+              <td><span class={{vsControlClass}}>{{decFormat vsControl}}%</span></td>
+              <td><span class={{significantClass}}>{{significant}}</span></td>
+            </tr>
+          {{/each}}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Totals</td>
+            <td>{{intFormat totals.started}}</td>
+            <td>{{intFormat totals.nonfinished}}</td>
+            <td>{{intFormat totals.finished}}</td>
+            <td>{{decFormat totals.finishedRate}}%</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   {{/each }}
 </template>
