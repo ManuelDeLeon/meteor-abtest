@@ -69,3 +69,7 @@ Meteor.startup ->
         nonfinished: started - finished
         finishedRate: if started then finished * 100 / started else 0
       }
+  Template.abtests.events
+    'click #resetTest': ->
+      if confirm("Are you sure you want to delete test: \n#{this.name}")
+        ABTest.reset this.name

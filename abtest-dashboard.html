@@ -1,6 +1,7 @@
 <template name="abtests">
   {{#each tests}}
-    <h3>{{name}}</h3>
+    <h3 class="pull-left">{{name}}</h3>
+    <button id="resetTest" class="btn btn-danger pull-right">Reset Test</button>
     <table class="table table-condensed table-hover">
       <thead>
         <tr>

@@ -19,3 +19,7 @@ Meteor.methods
     increment = {}
     increment["values.#{value}.finished"] = 1
     ABTests.update { name: name }, { $inc: increment }
+
+  resetAbTest: (name) ->
+    if Meteor.userId() in ABTestServer.adminIds
+      ABTests.remove { name: name }

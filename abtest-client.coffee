@@ -53,3 +53,5 @@ class ABTest
     if value
       Meteor.call 'finishAbTest', name, value
       removeValue name
+
+  @reset = (name) -> Meteor.call 'resetAbTest', name
