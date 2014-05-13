@@ -3,6 +3,6 @@
       "description": "AB testing framework for Meteor",
       "homepage": "https://github.com/ManuelDeLeon/meteor-abtest",
       "author": "Manuel De Leon <manueldeleon@conspek.com> (https://www.conspek.com)",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "git": "https://github.com/ManuelDeLeon/meteor-abtest.git"
 }

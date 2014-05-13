@@ -1,0 +1,4 @@
+git add .
+git commit -am "Releasing"
+mrt release .
+git push --tags

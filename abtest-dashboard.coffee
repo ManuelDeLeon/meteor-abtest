@@ -38,7 +38,7 @@ Meteor.startup ->
         item =
           isControl: not control
           isSignificant: ->
-            return false if this.finished < 10 or not this.control or this.control.finished < 10
+            return false if not this.control or (this.finished < 10 and this.control.finished < 10)
             n = this.finished + this.control.finished
             d = Math.abs this.finished - this.control.finished
             Math.pow(d, 2) >  n
