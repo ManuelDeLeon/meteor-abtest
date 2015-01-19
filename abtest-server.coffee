@@ -2,7 +2,7 @@ class ABTestServer
   @adminIds = []
 
 Meteor.publish "ABTests", ->
-  if this.userId in ABTestServer.adminIds
+  if ABTestServer.adminIds is '*' or this.userId in ABTestServer.adminIds
     ABTests.find()
 
 Meteor.methods
@@ -21,5 +21,5 @@ Meteor.methods
     ABTests.update { name: name }, { $inc: increment }
 
   resetAbTest: (name) ->
-    if Meteor.userId() in ABTestServer.adminIds
+    if ABTestServer.adminIds is '*' or  Meteor.userId() in ABTestServer.adminIds
       ABTests.remove { name: name }

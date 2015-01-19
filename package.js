@@ -1,11 +1,12 @@
 Package.describe({
     summary: "Simple AB testing framework for Meteor.",
-    version: "1.0.2",
+    version: "1.0.7",
     git: "https://github.com/ManuelDeLeon/meteor-abtest"
 });
 
 Package.onUse(function(api) {
-    api.versionsFrom('METEOR@0.9.2.2');
+    api.versionsFrom('METEOR@1.0');
+    api.use('mongo');
     api.use('coffeescript', ['client', 'server']);
     api.use('templating', 'client');
 
