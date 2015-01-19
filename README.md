@@ -7,6 +7,10 @@ Usage
 -----
 
 ```
+$ meteor add manuel:abtest
+```
+
+```
 ABTest.start("Test Name", ['Alternative 1', 'Alternative 2', 'Alternative n'])
 ```
 It returns one of the alternatives to be used.
