@@ -1,1 +1,1 @@
-@ABTests = new Meteor.Collection("abtests")
+@ABTests = new Mongo.Collection("abtests")
