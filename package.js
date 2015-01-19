@@ -1,7 +1,7 @@
 Package.describe({
     summary: "Simple AB testing framework for Meteor.",
     version: "1.0.0",
-    git: "https://github.com/ManuelDeLeon/viewmodel"
+    git: "https://github.com/ManuelDeLeon/meteor-abtest"
 });
 
 Package.onUse(function(api) {
