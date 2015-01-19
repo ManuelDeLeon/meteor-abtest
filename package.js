@@ -1,8 +1,11 @@
 Package.describe({
-  summary: "Simple AB testing framework for Meteor"
+    summary: "Simple AB testing framework for Meteor.",
+    version: "1.0.0",
+    git: "https://github.com/ManuelDeLeon/viewmodel"
 });
 
-Package.on_use(function(api){
+Package.onUse(function(api) {
+    api.versionsFrom('METEOR@0.9.2.2');
     api.use('coffeescript', ['client', 'server']);
     api.use('templating', 'client');
 

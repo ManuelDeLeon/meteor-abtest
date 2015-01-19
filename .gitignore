@@ -1,4 +1,9 @@
-/.idea
-/*.iml
+/.meteor/local
+/.git
+/.build
 /packages
+/c
+/p
+/*.iml
+/.idea
 /smart.lock
