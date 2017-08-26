@@ -6,19 +6,30 @@ Simple AB testing framework for Meteor (modeled after Rails' split).
 Usage
 -----
 
+Install:
 ```
 $ meteor add manuel:abtest
 ```
 
+Return one of the alternatives to be used:
 ```
 ABTest.start("Test Name", ['Alternative 1', 'Alternative 2', 'Alternative n'])
 ```
-It returns one of the alternatives to be used.
 
+Return one of the weighted alternatives to be used:
+```
+ABTest.start("Test Name", { 
+	'Alternative 1': 70, // Show 70% of the time
+	'Alternative 2': 20, 
+	'Alternative 3': 10 
+})
+```
+
+Conclude the test for this user:
 ```
 ABTest.finish("Test Name")
 ```
-Concludes the test for this user.
+
 
 **Example**
 ```

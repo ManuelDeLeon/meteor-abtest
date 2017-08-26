@@ -1,5 +1,14 @@
 class ABTest
   randomNumber = (min, max) -> Math.floor(Math.random() * (max - min + 1) + min )
+  weightedRand = (spec) ->
+    table = []
+    for i of spec
+      j = 0
+      while j < spec[i]
+        table.push i
+        j++
+    ->
+      table[Math.floor(Math.random() * table.length)]
 
   cookies = null
   getCookie = (name) ->
@@ -42,8 +51,11 @@ class ABTest
   @start = (name, values) ->
     value = getValue storageName(name)
     if not value
-      randomIndex = randomNumber(0, values.length - 1)
-      value = values[randomIndex]
+      if values instanceof Array
+        randomIndex = randomNumber(0, values.length - 1)
+        value = values[randomIndex]
+      else
+        value = weightedRand(values)()
       setValue storageName(name), value
       Meteor.call 'startAbTest', name, value, randomIndex
     value
